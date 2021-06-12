@@ -257,7 +257,7 @@ language sql as $u$
 		language plpgsql as $$
 		begin
 			update reservations
-			set (human, number, datefrom, num_of_days) = (human_id, number_id, datefrom_, num_of_days_)
+			set (human, number, datefrom, num_of_days) = (human_id, number_id, cast (datefrom_ as date), num_of_days_)
 			where id_= id;
 		end;
 		$$;
